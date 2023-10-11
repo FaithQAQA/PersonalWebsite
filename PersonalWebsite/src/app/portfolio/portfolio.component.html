@@ -1,0 +1,27 @@
+<!-- portfolio.component.html -->
+<div>
+    <h2>My Portfolio</h2>
+    <div>
+      <label for="language">Filter by Language:</label>
+      <select id="language" [(ngModel)]="selectedLanguage">
+        <option value="all">All</option>
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="javascript">JavaScript</option>
+        <option value="java">Java</option>
+        <option value="angular">Angular</option>
+
+
+        <!-- Add more options for other languages -->
+      </select>
+      <button (click)="filterProjects()">Filter</button>
+    </div>
+    <div *ngFor="let project of projectsToShow">
+      <h3>{{ project.title }}</h3>
+      <p>Language: {{ project.language }}</p>
+      <a href="{{ project.link }}" target="_blank">Visit Project</a>
+      <img src="{{ project.picture}}" alt="" srcset="" width="600" height="400">
+      <!-- Add other project details here -->
+    </div>
+  </div>
+  
